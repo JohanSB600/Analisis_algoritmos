@@ -40,22 +40,22 @@ public class Graficador {
         g.setFont(new Font("SansSerif", Font.PLAIN, 12));
         int n = tiempos.length;
 
-        double xScale = (double)(width - 2 * padding) / Math.max(1, (n - 1));
-        double yRange = Math.max(1, (double)(max - min));
+        double xScale = (double) (width - 2 * padding) / Math.max(1, (n - 1));
+        double yRange = Math.max(1, (double) (max - min));
 
         int ticks = 10;
         for (int i = 0; i <= ticks; i++) {
-            int y = padding + (int)((height - 2 * padding) * i / (double)ticks);
+            int y = padding + (int) ((height - 2 * padding) * i / (double) ticks);
             g.setColor(new Color(230, 230, 230));
             g.drawLine(padding, y, width - padding, y);
-            long labelVal = max - (long)((max - min) * i / (double)ticks);
+            long labelVal = max - (long) ((max - min) * i / (double) ticks);
             g.setColor(Color.BLACK);
             g.drawString(Long.toString(labelVal), 5, y + 5);
         }
 
         int xLabelInterval = Math.max(1, n / 10);
         for (int i = 0; i < n; i += xLabelInterval) {
-            int x = padding + (int)(i * xScale);
+            int x = padding + (int) (i * xScale);
             String lbl = Integer.toString(i + 1);
             g.setColor(Color.BLACK);
             g.drawString(lbl, x - g.getFontMetrics().stringWidth(lbl) / 2, height - padding + 20);
@@ -63,17 +63,17 @@ public class Graficador {
 
         g.setColor(Color.BLUE);
         for (int i = 0; i < n - 1; i++) {
-            int x1 = padding + (int)(i * xScale);
-            int y1 = padding + (int)((max - tiempos[i]) * (height - 2 * padding) / yRange);
-            int x2 = padding + (int)((i + 1) * xScale);
-            int y2 = padding + (int)((max - tiempos[i + 1]) * (height - 2 * padding) / yRange);
+            int x1 = padding + (int) (i * xScale);
+            int y1 = padding + (int) ((max - tiempos[i]) * (height - 2 * padding) / yRange);
+            int x2 = padding + (int) ((i + 1) * xScale);
+            int y2 = padding + (int) ((max - tiempos[i + 1]) * (height - 2 * padding) / yRange);
             g.drawLine(x1, y1, x2, y2);
         }
 
         g.setColor(Color.RED);
         for (int i = 0; i < n; i++) {
-            int x = padding + (int)(i * xScale);
-            int y = padding + (int)((max - tiempos[i]) * (height - 2 * padding) / yRange);
+            int x = padding + (int) (i * xScale);
+            int y = padding + (int) ((max - tiempos[i]) * (height - 2 * padding) / yRange);
             g.fillOval(x - 3, y - 3, 6, 6);
         }
 

@@ -22,13 +22,13 @@ public class Ejecutar {
 
         System.out.println("\n METODO 1");
         for (int i = 0; i < r.outputs.length; i++) {
-            System.out.println("Ciclo " + (i+1) + " -> " + r.outputs[i]);
+            System.out.println("Ciclo " + (i + 1) + " -> " + r.outputs[i]);
         }
 
         System.out.println("\nTIEMPOS METODO 1");
         System.out.println("Ciclo ; Tiempo(ns)");
         for (int i = 0; i < r.tiempos.length; i++) {
-            System.out.println((i+1) + " ; " + r.tiempos[i]);
+            System.out.println((i + 1) + " ; " + r.tiempos[i]);
         }
 
         Graficador.graficar(r.tiempos, "Metodo 1 - Tiempos", "metodo1.png");
@@ -40,13 +40,13 @@ public class Ejecutar {
 
         System.out.println("\n METODO 2");
         for (int i = 0; i < r.outputs.length; i++) {
-            System.out.println("Ciclo " + (i+1) + " -> " + r.outputs[i]);
+            System.out.println("Ciclo " + (i + 1) + " -> " + r.outputs[i]);
         }
 
         System.out.println("\nTIEMPOS METODO 2");
         System.out.println("Ciclo ; Tiempo(ns)");
         for (int i = 0; i < r.tiempos.length; i++) {
-            System.out.println((i+1) + " ; " + r.tiempos[i]);
+            System.out.println((i + 1) + " ; " + r.tiempos[i]);
         }
 
         Graficador.graficar(r.tiempos, "Metodo 2 - Tiempos", "metodo2.png");
