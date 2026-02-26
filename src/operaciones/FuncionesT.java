@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FuncionesT {
 
-    // Metodo 1 
+    // Metodo 1
     public String metodo1(String cadena) {
 
         if (cadena == null)
@@ -18,7 +18,7 @@ public class FuncionesT {
         return cadena2;
     }
 
-    // Metodo 2 
+    // Metodo 2
     public String[] metodo2(String[] datos) {
         Arrays.sort(datos);
         return datos;
